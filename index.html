@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Project Manager</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #eef2f3;
+            color: #333;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+        }
+
+        .welcome-container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 900px;
+        }
+
+        h1 {
+            font-size: 42px;
+            color: #1c1f26;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 22px;
+            color: #555;
+            margin-bottom: 50px;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .card {
+            flex: 1;
+            background-color: #007bff;
+            color: white;
+            padding: 30px;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 20px;
+            text-align: center;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: calc(50% - 20px); /* Adjust width for more square-like cards */
+            box-sizing: border-box;
+        }
+
+        .card:hover {
+            background-color: #0056b3;
+            transform: translateY(-5px);
+        }
+
+        .admin-card {
+            background-color: #28a745;
+        }
+
+        .admin-card:hover {
+            background-color: #218838;
+        }
+
+        .guest-card {
+            background-color: #dc3545;
+        }
+
+        .guest-card:hover {
+            background-color: #c82333;
+        }
+
+        .signup-card {
+            background-color: #6c757d;
+        }
+
+        .signup-card:hover {
+            background-color: #5a6268;
+        }
+
+        .login-card {
+            background-color: #17a2b8;
+        }
+
+        .login-card:hover {
+            background-color: #138496;
+        }
+
+        .card-description {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #eef2f3;
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-container">
+        <h1>Welcome to Project Manager</h1>
+        <p>Choose how you want to proceed:</p>
+        <div class="card-container">
+            <!-- Admin Card -->
+            <a href="uc.html" class="card admin-card">
+                Admin
+                <div class="card-description">Log in as an admin to manage users, projects, and settings.</div>
+            </a>
+            <!-- Guest Card -->
+            <a href="uc.html" class="card guest-card">
+                Guest
+                <div class="card-description">Continue as a guest to explore the project manager features.</div>
+            </a>
+            <!-- Sign Up Card -->
+            <a href="sign-up.html" class="card signup-card">
+                Sign Up
+                <div class="card-description">Create a new account to start managing your projects.</div>
+            </a>
+            <!-- Login Card -->
+            <a href="uc.html" class="card login-card">
+                Login
+                <div class="card-description">Log in to your account to access your projects and settings.</div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
