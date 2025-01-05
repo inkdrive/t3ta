@@ -3,7 +3,7 @@ import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js
 import { supabaseUrl, supabaseKey } from './env.js';  // Import credentials from env.js
 
 // Initialize Supabase client
-const supabase = createClient(supabaseUrl, supabaseKey);
+const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 // Handle form submission for sign-up
 document.getElementById('signup-form').addEventListener('submit', async (event) => {
