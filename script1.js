@@ -1,29 +1,27 @@
-// script.js
-import { supabaseUrl, supabaseKey } from './env.js';
+// Importing the required createClient function from Supabase CDN
+import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'; 
+import { supabaseUrl, supabaseKey } from './env.js';  // Import credentials from env.js
 
 // Initialize Supabase client
-const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+const supabase = createClient(supabaseUrl, supabaseKey);
 
-// Handle form submission
+// Handle form submission for sign-up
 document.getElementById('signup-form').addEventListener('submit', async (event) => {
     event.preventDefault();
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
 
-    // Call Supabase's authentication API to create a new user
-    const { user, error } = await supabase.auth.signUp({
-        email: username,  // Using username as email for now
-        password: password
-    });
+    const username = document.getElementById('username').value; // Get the username input
+    const password = document.getElementById('password').value; // Get the password input
+
+    // Insert user data into the 'users' table directly (no Supabase Auth)
+    const { data, error } = await supabase.from('users').insert([
+        { username, password }  // Insert username and password into the 'users' table
+    ]);
 
     if (error) {
-        console.error('Error:', error.message);
-        alert('Error during sign up!');
+        console.error('Error:', error.message);  // Log error to console for debugging
+        alert('Error during sign-up!');  // Show error alert to user
     } else {
-        // Optionally, store user data (like username) in the 'users' table if needed
-        // You can add more custom data as necessary here
-
-        // Redirect to profile page after successful signup
+        // Redirect to profile page after successful sign-up
         window.location.href = 'profile.html';
     }
 });
